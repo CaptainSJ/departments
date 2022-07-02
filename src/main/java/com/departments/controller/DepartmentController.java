@@ -3,9 +3,9 @@ package com.departments.controller;
 import com.departments.entity.Department;
 import com.departments.service.DepartmentService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 public class DepartmentController {
@@ -18,6 +18,20 @@ public class DepartmentController {
     {
         return deptService.saveDept(dept);
     }
+
+    @GetMapping("/dept")
+    public List<Department> getDept() {
+
+        return deptService.getDept();
+    }
+
+    @GetMapping("/dept/{id}")
+    public Department getDept(@PathVariable("id") Long id) {
+
+        return deptService.getDept(id);
+    }
+
+
 
 
 }
