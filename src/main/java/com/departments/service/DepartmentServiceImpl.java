@@ -18,4 +18,15 @@ public class DepartmentServiceImpl implements DepartmentService{
     public Department saveDept(Department dept) {
         return deptRepo.save(dept);
     }
+
+    @Override
+    public List<Department> getDept() {
+        return deptRepo.findAll();
+    }
+
+    @Override
+    public Department getDept(Long id) {
+        return deptRepo.findById(id).get();
+         
+    }
 }
