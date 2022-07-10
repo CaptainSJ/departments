@@ -1,17 +1,19 @@
 package com.departments.service;
 
-import com.departments.entity.Department;
-
 import java.util.List;
-import java.util.Optional;
+
+import com.departments.entity.Department;
 
 public interface DepartmentService {
 
-    Department saveDept(Department dept);
+	Department saveDept(Department dept);
 
-    List<Department> getDept();
+	List<Department> getDept();
 
-    Department getDept(Long id);
+	Department getDept(Long id);
 
+	void delDept(Long id);
+
+	Department updateDept(Long id, Department dept);
 
 }
